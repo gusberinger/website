@@ -1,3 +1,5 @@
+// idea from christopher4lis canvas tutorial
+
 var canvas = document.querySelector('canvas');
 canvas.width = window.innerWidth;
 canvas.height = 700;
@@ -36,11 +38,8 @@ Circle.prototype.update = function() {
 		this.dy += gravity;
 	}
 
-	// add velocity
 	this.x += this.dx;
 	this.y += this.dy;
-
-	// add gravity
 	this.draw();
 }
 
@@ -78,7 +77,6 @@ function animate() {
 			circles[i].reset(); 
 	}
 }
-
 
 setup();
 animate();
