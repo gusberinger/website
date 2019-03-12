@@ -26,7 +26,7 @@ Circle.prototype.draw = function() {
 
 Circle.prototype.update = function() {	
 	// hit the walls
-	if (this.x + this.radius + this.dx > innerWidth || this.x + this.radius)
+	if (this.x + this.radius + this.dx > innerWidth || this.x - this.radius < 0)
 		this.dx *= -1;
 
 	// hit the floor
@@ -61,7 +61,7 @@ Circle.prototype.energy = function() {
 
 var circles = [];
 function setup() {
-	for (let i = 0; i < 100; i++) {
+	for (let i = 0; i < 50; i++) {
 		circle = new Circle(0, 0, 0, 0, 0, 'red');
 		circle.reset();
 		circles.push(circle)
