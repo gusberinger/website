@@ -7,12 +7,6 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-.link {
-  font-family: 'Lato', sans-serif;
-  font-size: 110%;
-  padding: 10px;
-}
-
 hr {
   border: none;
   height: 5px;
@@ -20,18 +14,15 @@ hr {
 }
 
 canvas {
-  /*border-style: solid;*/
   align-content: center;
   margin-top: 20px;
   width: 90%;
 }
 
-.gusberinger-title {
-  color: black;
-  animation: colorFade ease-in 1;
-  animation-fill-mode:forwards;
-  animation-duration:300ms;
-  transition: font-size 300ms ease-in-out 0s;
+.link {
+  font-family: 'Lato', sans-serif;
+  font-size: 110%;
+  padding: 10px;
 }
 
 .title {
@@ -40,26 +31,14 @@ canvas {
   color: #d6d6d6;
 }
 
-.title:hover .gusberinger-title {
+.gus-title {
+  color: black;
+  animation: colorFade ease-in 1;
+  animation-fill-mode: forwards;
+  animation-duration :300ms;
+  transition: font-size 300ms ease-in-out 0s;
+}
+
+.title:hover .gus-title {
   font-size: 140%;
-}
-
-.subtitle {
-  color: #333333;
-}
-
-.contact {
-  padding-right: 50%;
-}
-
-.message {
-  padding-bottom: 10px;
-}
-
-.profile {
-  width: 320px;
-  padding-top: 30px;
-  border-radius: 100%;
-  display: block;
-  /*transition: transalte 300ms ease-in-out 0s;*/
 }
