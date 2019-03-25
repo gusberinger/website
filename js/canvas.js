@@ -1,11 +1,9 @@
 // idea from christopher4lis canvas tutorial
-
 var canvas = document.querySelector('canvas');
 canvas.width = window.innerWidth;
 canvas.height = 700;
 var c = canvas.getContext('2d');
 var gravity = 0.5;
-var friction = .95;
 
 function Circle(x, y, dx, dy, radius, color) {
 	this.dx = dx;
@@ -15,9 +13,11 @@ function Circle(x, y, dx, dy, radius, color) {
 	this.radius = radius;
 	this.color = color;
 	this.energy;
+	this.friction = Math.random() * .05 + .90;
 }
 
 Circle.prototype.draw = function() {
+	// show the circle
 	c.beginPath();
 	c.fillStyle = this.color;
 	c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
@@ -31,13 +31,14 @@ Circle.prototype.update = function() {
 
 	// hit the floor
 	if (this.y + this.radius + this.dy > canvas.height) {
-		this.dy *= -friction;
-		this.dx *= friction;
+		this.dy *= -this.friction;
+		this.dx *= this.friction;
 	}
 	else {
 		this.dy += gravity;
 	}
 
+	// add velocity to position and draw
 	this.x += this.dx;
 	this.y += this.dy;
 	this.draw();
@@ -56,7 +57,7 @@ Circle.prototype.reset = function() {
 }
 
 Circle.prototype.energy = function() {
-	return .5 * this.dy * this.dy + gravity * (canvas.height - this.y - this.radius);
+	return .5 * this.radius * this.dy * this.dy + this.radius * gravity * (canvas.height - this.y - this.radius);
 }
 
 var circles = [];
@@ -73,7 +74,7 @@ function animate() {
 	c.clearRect(0, 0, canvas.width, canvas.height);
 	for (let i = 0; i < circles.length; i++) {
 		circles[i].update();
-		if (circles[i].energy() < 0)
+		if (circles[i].energy() < 1)
 			circles[i].reset(); 
 	}
 }
