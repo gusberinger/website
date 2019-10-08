@@ -1,0 +1,44 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Is it a fullmoon on the sabbath?</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="suncalc.js"></script>
+
+
+       <!-- <link rel="apple-touch-icon" href="/apple-touch-icon.png"> -->
+       <!-- Place favicon.ico in the root directory -->
+
+        <style>
+         .iframe-div {
+             text-align: center;
+         }
+         .answer {
+             text-align: center;
+             font-size: 5em;
+         }
+        </style>
+    </head>
+    <script>
+     // astronomy code from https://github.com/mourner/suncalc
+     today = new Date()
+     sabbath = today.getDay() == 5
+     moon = SunCalc.getMoonIllumination(new Date())
+     fullmoon = Math.abs(.5 - moon) < .05
+
+     /* if (sabbath && fullmoon) { */
+     if (sabbath && fullmoon) {
+         document.write('<h1 class="answer">Is it a fullmoon on the Sabbath? <br> YES</h1><div class="iframe-div"><iframe width="1440" height="630" src="http://www.youtube.com/embed/A6V2oCX3Hn4?start=11&autoplay=1" frameborder="0" allowfullscreen></iframe></div>')
+     }
+     else {
+         document.write('<h1 class="answer">Is it a fullmoon on the Sabbath? <br> NO</h1>');
+     }
+
+    </script>
+    <body>
+        <!-- <h1>Is it a fullmoon on the sabbath?</h1> -->
+    </body>
+</html>
