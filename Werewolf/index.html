@@ -26,8 +26,8 @@
      // astronomy code from https://github.com/mourner/suncalc
      today = new Date()
      sabbath = today.getDay() == 6
-     moon = SunCalc.getMoonIllumination(new Date())
-     fullmoon = Math.abs(.5 - moon) < .05
+     moon = SunCalc.getMoonIllumination(today)
+     fullmoon = Math.abs(.5 - moon.phase) < .05
 
      /* if (sabbath && fullmoon) { */
      if (sabbath && fullmoon) {
