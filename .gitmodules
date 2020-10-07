@@ -1,0 +1,3 @@
+[submodule "carfat"]
+	path = carfat
+	url = https://github.com/gusberinger/carfat
