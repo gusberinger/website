@@ -1,3 +1,6 @@
 [submodule "carfat"]
 	path = carfat
 	url = https://github.com/gusberinger/carfat
+[submodule "SafeU"]
+	path = SafeU
+	url = https://github.com/gusberinger/SafeU
